@@ -29,6 +29,7 @@ import logging
 import signal
 import sys
 import traceback
+import json
 from typing import Any, Callable, Coroutine, Dict, Generator, List, Optional, Sequence, TYPE_CHECKING, Tuple, TypeVar, Union
 
 import aiohttp
@@ -192,7 +193,6 @@ class Client:
         To enable these events, this must be set to ``True``. Defaults to ``False``.
 
         .. versionadded:: 2.0
-
     Attributes
     -----------
     ws
@@ -475,6 +475,8 @@ class Client:
         _log.info('logging in using static token')
 
         data = await self.http.static_login(token.strip())
+        if isinstance(data, str):
+            data = json.loads(data)
         self._connection.user = ClientUser(state=self._connection, data=data)
 
     async def connect(self, *, reconnect: bool = True) -> None:

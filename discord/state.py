@@ -562,8 +562,9 @@ class ConnectionState:
             else:
                 self.application_id = utils._get_as_snowflake(application, 'id')
                 # flags will always be present here
-                self.application_flags = ApplicationFlags._from_value(application['flags'])  # type: ignore
-
+#                self.application_flags = ApplicationFlags._from_value(application['flags'])  # type: ignore
+#Fosscord doesn't send flags
+                self.application_flags = None
         for guild_data in data['guilds']:
             self._add_guild_from_data(guild_data)
 

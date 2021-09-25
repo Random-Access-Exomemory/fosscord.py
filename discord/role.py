@@ -74,8 +74,12 @@ class RoleTags:
     )
 
     def __init__(self, data: RoleTagPayload):
-        self.bot_id: Optional[int] = _get_as_snowflake(data, 'bot_id')
-        self.integration_id: Optional[int] = _get_as_snowflake(data, 'integration_id')
+        if not bool(data):
+            data = {}
+        #self.bot_id: Optional[int] = _get_as_snowflake(data, 'bot_id')
+        self.bot_id = None #fosscord has no bot support
+        #self.integration_id: Optional[int] = _get_as_snowflake(data, 'integration_id')
+        self.integration_id = None # fosscord has no integration support afaik
         # NOTE: The API returns "null" for this if it's valid, which corresponds to None.
         # This is different from other fields where "null" means "not there".
         # So in this case, a value of None is the same as True.
