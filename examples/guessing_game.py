@@ -1,9 +1,9 @@
-import discord
+import fosscord
 import random
 import asyncio
 
 
-class MyClient(discord.Client):
+class MyClient(fosscord.Client):
     async def on_ready(self):
         print(f"Logged in as {self.user} (ID: {self.user.id})")
         print("------")

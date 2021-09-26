@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
   requirements = f.read().splitlines()
 
 version = ''
-with open('discord/__init__.py') as f:
+with open('fosscord/__init__.py') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 if not version:
@@ -46,26 +46,26 @@ extras_require = {
 }
 
 packages = [
-    'discord',
-    'discord.types',
-    'discord.ui',
-    'discord.webhook',
-    'discord.app',
-    'discord.ext.commands',
-    'discord.ext.tasks',
+    'fosscord',
+    'fosscord.types',
+    'fosscord.ui',
+    'fosscord.webhook',
+    'fosscord.app',
+    'fosscord.ext.commands',
+    'fosscord.ext.tasks',
 ]
 
-setup(name='py-cord',
-      author='Pycord Development',
-      url='https://github.com/Pycord-Development/pycord',
+setup(name='fosscord.py',
+      author='mugman174',
+      url='https://github.com/mugman174/fosscord.py',
       project_urls={
         "Documentation": "https://pycord.readthedocs.io/en/latest/",
-        "Issue tracker": "https://github.com/Pycord-Development/pycord/issues",
+        "Issue tracker": "https://github.com/mugman174/fosscord.py/issues",
       },
       version=version,
       packages=packages,
       license='MIT',
-      description='A Python wrapper for the Discord API',
+      description='A Python wrapper for Fosscord-compatible API',
       long_description=readme,
       long_description_content_type="text/x-rst",
       include_package_data=True,

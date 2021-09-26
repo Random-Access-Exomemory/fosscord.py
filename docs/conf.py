@@ -89,7 +89,7 @@ copyright = '2015-2021, Rapptz & 2021-present, Pycord Development'
 # The short X.Y version.
 
 version = ''
-with open('../discord/__init__.py') as f:
+with open('../fosscord/__init__.py') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 # The full version, including alpha/beta/rc tags.
@@ -159,15 +159,15 @@ html_experimental_html5_writer = True
 html_theme = 'basic'
 
 html_context = {
-  'discord_invite': 'https://discord.gg/rdXkRJG7pS',
-  'discord_extensions': [
-    ('discord.ext.commands', 'ext/commands'),
-    ('discord.ext.tasks', 'ext/tasks'),
+  'fosscord_invite': 'https://fosscord.gg/rdXkRJG7pS',
+  'fosscord_extensions': [
+    ('fosscord.ext.commands', 'ext/commands'),
+    ('fosscord.ext.tasks', 'ext/tasks'),
   ],
 }
 
 resource_links = {
-  'discord': 'https://discord.gg/rdXkRJG7pS',
+  'fosscord': 'https://fosscord.gg/rdXkRJG7pS',
   'issues': 'https://github.com/Pycord-Development/pycord/issues',
   'discussions': 'https://github.com/Pycord-Development/pycord/discussions',
   'examples': f'https://github.com/Pycord-Development/pycord/tree/{branch}/examples',
@@ -271,7 +271,7 @@ html_js_files = [
 ]
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'discord.pydoc'
+htmlhelp_basename = 'fosscord.pydoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -357,5 +357,5 @@ texinfo_documents = [
 def setup(app):
   if app.config.language == 'ja':
     app.config.intersphinx_mapping['py'] = ('https://docs.python.org/ja/3', None)
-    app.config.html_context['discord_invite'] = 'https://discord.gg/rdXkRJG7pS'
-    app.config.resource_links['discord'] = 'https://discord.gg/rdXkRJG7pS'
+    app.config.html_context['fosscord_invite'] = 'https://fosscord.gg/rdXkRJG7pS'
+    app.config.resource_links['fosscord'] = 'https://fosscord.gg/rdXkRJG7pS'

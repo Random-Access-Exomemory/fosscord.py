@@ -1,9 +1,9 @@
-from discord.ext import tasks
+from fosscord.ext import tasks
 
-import discord
+import fosscord
 
 
-class MyClient(discord.Client):
+class MyClient(fosscord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

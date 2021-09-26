@@ -1,4 +1,4 @@
-.. currentmodule:: discord
+.. currentmodule:: fosscord
 
 API Reference
 ===============
@@ -13,9 +13,9 @@ Bots
 Bot
 ~~~~
 
-.. attributetable:: discord.ext.commands.Bot
+.. attributetable:: fosscord.ext.commands.Bot
 
-.. autoclass:: discord.ext.commands.Bot
+.. autoclass:: fosscord.ext.commands.Bot
     :members:
     :inherited-members:
     :exclude-members: after_invoke, before_invoke, check, check_once, command, event, group, listen
@@ -47,27 +47,27 @@ Bot
 AutoShardedBot
 ~~~~~~~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.AutoShardedBot
+.. attributetable:: fosscord.ext.commands.AutoShardedBot
 
-.. autoclass:: discord.ext.commands.AutoShardedBot
+.. autoclass:: fosscord.ext.commands.AutoShardedBot
     :members:
 
 Prefix Helpers
 ----------------
 
-.. autofunction:: discord.ext.commands.when_mentioned
+.. autofunction:: fosscord.ext.commands.when_mentioned
 
-.. autofunction:: discord.ext.commands.when_mentioned_or
+.. autofunction:: fosscord.ext.commands.when_mentioned_or
 
 .. _ext_commands_api_events:
 
 Event Reference
 -----------------
 
-These events function similar to :ref:`the regular events <discord-api-events>`, except they
+These events function similar to :ref:`the regular events <fosscord-api-events>`, except they
 are custom to the command extension module.
 
-.. function:: discord.ext.commands.on_command_error(ctx, error)
+.. function:: fosscord.ext.commands.on_command_error(ctx, error)
 
     An error handler that is called when an error is raised
     inside a command either through user input error, check
@@ -80,7 +80,7 @@ are custom to the command extension module.
     :param error: The error that was raised.
     :type error: :class:`.CommandError` derived
 
-.. function:: discord.ext.commands.on_command(ctx)
+.. function:: fosscord.ext.commands.on_command(ctx)
 
     An event that is called when a command is found and is about to be invoked.
 
@@ -90,7 +90,7 @@ are custom to the command extension module.
     :param ctx: The invocation context.
     :type ctx: :class:`.Context`
 
-.. function:: discord.ext.commands.on_command_completion(ctx)
+.. function:: fosscord.ext.commands.on_command_completion(ctx)
 
     An event that is called when a command has completed its invocation.
 
@@ -108,18 +108,18 @@ Commands
 Decorators
 ~~~~~~~~~~~~
 
-.. autofunction:: discord.ext.commands.command
+.. autofunction:: fosscord.ext.commands.command
     :decorator:
 
-.. autofunction:: discord.ext.commands.group
+.. autofunction:: fosscord.ext.commands.group
     :decorator:
 
 Command
 ~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.Command
+.. attributetable:: fosscord.ext.commands.Command
 
-.. autoclass:: discord.ext.commands.Command
+.. autoclass:: fosscord.ext.commands.Command
     :members:
     :special-members: __call__
     :exclude-members: after_invoke, before_invoke, error
@@ -136,9 +136,9 @@ Command
 Group
 ~~~~~~
 
-.. attributetable:: discord.ext.commands.Group
+.. attributetable:: fosscord.ext.commands.Group
 
-.. autoclass:: discord.ext.commands.Group
+.. autoclass:: fosscord.ext.commands.Group
     :members:
     :inherited-members:
     :exclude-members: after_invoke, before_invoke, command, error, group
@@ -161,9 +161,9 @@ Group
 GroupMixin
 ~~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.GroupMixin
+.. attributetable:: fosscord.ext.commands.GroupMixin
 
-.. autoclass:: discord.ext.commands.GroupMixin
+.. autoclass:: fosscord.ext.commands.GroupMixin
     :members:
     :exclude-members: command, group
 
@@ -181,17 +181,17 @@ Cogs
 Cog
 ~~~~
 
-.. attributetable:: discord.ext.commands.Cog
+.. attributetable:: fosscord.ext.commands.Cog
 
-.. autoclass:: discord.ext.commands.Cog
+.. autoclass:: fosscord.ext.commands.Cog
     :members:
 
 CogMeta
 ~~~~~~~~
 
-.. attributetable:: discord.ext.commands.CogMeta
+.. attributetable:: fosscord.ext.commands.CogMeta
 
-.. autoclass:: discord.ext.commands.CogMeta
+.. autoclass:: fosscord.ext.commands.CogMeta
     :members:
 
 .. _ext_commands_help_command:
@@ -202,42 +202,42 @@ Help Commands
 HelpCommand
 ~~~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.HelpCommand
+.. attributetable:: fosscord.ext.commands.HelpCommand
 
-.. autoclass:: discord.ext.commands.HelpCommand
+.. autoclass:: fosscord.ext.commands.HelpCommand
     :members:
 
 DefaultHelpCommand
 ~~~~~~~~~~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.DefaultHelpCommand
+.. attributetable:: fosscord.ext.commands.DefaultHelpCommand
 
-.. autoclass:: discord.ext.commands.DefaultHelpCommand
+.. autoclass:: fosscord.ext.commands.DefaultHelpCommand
     :members:
     :exclude-members: send_bot_help, send_cog_help, send_group_help, send_command_help, prepare_help_command
 
 MinimalHelpCommand
 ~~~~~~~~~~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.MinimalHelpCommand
+.. attributetable:: fosscord.ext.commands.MinimalHelpCommand
 
-.. autoclass:: discord.ext.commands.MinimalHelpCommand
+.. autoclass:: fosscord.ext.commands.MinimalHelpCommand
     :members:
     :exclude-members: send_bot_help, send_cog_help, send_group_help, send_command_help, prepare_help_command
 
 Paginator
 ~~~~~~~~~~
 
-.. attributetable:: discord.ext.commands.Paginator
+.. attributetable:: fosscord.ext.commands.Paginator
 
-.. autoclass:: discord.ext.commands.Paginator
+.. autoclass:: fosscord.ext.commands.Paginator
     :members:
 
 Enums
 ------
 
 .. class:: BucketType
-    :module: discord.ext.commands
+    :module: fosscord.ext.commands
 
     Specifies a type of bucket for, e.g. a cooldown.
 
@@ -271,61 +271,61 @@ Enums
 Checks
 -------
 
-.. autofunction:: discord.ext.commands.check(predicate)
+.. autofunction:: fosscord.ext.commands.check(predicate)
     :decorator:
 
-.. autofunction:: discord.ext.commands.check_any(*checks)
+.. autofunction:: fosscord.ext.commands.check_any(*checks)
     :decorator:
 
-.. autofunction:: discord.ext.commands.has_role(item)
+.. autofunction:: fosscord.ext.commands.has_role(item)
     :decorator:
 
-.. autofunction:: discord.ext.commands.has_permissions(**perms)
+.. autofunction:: fosscord.ext.commands.has_permissions(**perms)
     :decorator:
 
-.. autofunction:: discord.ext.commands.has_guild_permissions(**perms)
+.. autofunction:: fosscord.ext.commands.has_guild_permissions(**perms)
     :decorator:
 
-.. autofunction:: discord.ext.commands.has_any_role(*items)
+.. autofunction:: fosscord.ext.commands.has_any_role(*items)
     :decorator:
 
-.. autofunction:: discord.ext.commands.bot_has_role(item)
+.. autofunction:: fosscord.ext.commands.bot_has_role(item)
     :decorator:
 
-.. autofunction:: discord.ext.commands.bot_has_permissions(**perms)
+.. autofunction:: fosscord.ext.commands.bot_has_permissions(**perms)
     :decorator:
 
-.. autofunction:: discord.ext.commands.bot_has_guild_permissions(**perms)
+.. autofunction:: fosscord.ext.commands.bot_has_guild_permissions(**perms)
     :decorator:
 
-.. autofunction:: discord.ext.commands.bot_has_any_role(*items)
+.. autofunction:: fosscord.ext.commands.bot_has_any_role(*items)
     :decorator:
 
-.. autofunction:: discord.ext.commands.cooldown(rate, per, type=discord.ext.commands.BucketType.default)
+.. autofunction:: fosscord.ext.commands.cooldown(rate, per, type=fosscord.ext.commands.BucketType.default)
     :decorator:
 
-.. autofunction:: discord.ext.commands.dynamic_cooldown(cooldown, type=BucketType.default)
+.. autofunction:: fosscord.ext.commands.dynamic_cooldown(cooldown, type=BucketType.default)
     :decorator:
 
-.. autofunction:: discord.ext.commands.max_concurrency(number, per=discord.ext.commands.BucketType.default, *, wait=False)
+.. autofunction:: fosscord.ext.commands.max_concurrency(number, per=fosscord.ext.commands.BucketType.default, *, wait=False)
     :decorator:
 
-.. autofunction:: discord.ext.commands.before_invoke(coro)
+.. autofunction:: fosscord.ext.commands.before_invoke(coro)
     :decorator:
 
-.. autofunction:: discord.ext.commands.after_invoke(coro)
+.. autofunction:: fosscord.ext.commands.after_invoke(coro)
     :decorator:
 
-.. autofunction:: discord.ext.commands.guild_only(,)
+.. autofunction:: fosscord.ext.commands.guild_only(,)
     :decorator:
 
-.. autofunction:: discord.ext.commands.dm_only(,)
+.. autofunction:: fosscord.ext.commands.dm_only(,)
     :decorator:
 
-.. autofunction:: discord.ext.commands.is_owner(,)
+.. autofunction:: fosscord.ext.commands.is_owner(,)
     :decorator:
 
-.. autofunction:: discord.ext.commands.is_nsfw(,)
+.. autofunction:: fosscord.ext.commands.is_nsfw(,)
     :decorator:
 
 .. _ext_commands_api_context:
@@ -333,25 +333,25 @@ Checks
 Cooldown
 ---------
 
-.. attributetable:: discord.ext.commands.Cooldown
+.. attributetable:: fosscord.ext.commands.Cooldown
 
-.. autoclass:: discord.ext.commands.Cooldown
+.. autoclass:: fosscord.ext.commands.Cooldown
     :members:
 
 Context
 --------
 
-.. attributetable:: discord.ext.commands.Context
+.. attributetable:: fosscord.ext.commands.Context
 
-.. autoclass:: discord.ext.commands.Context
+.. autoclass:: fosscord.ext.commands.Context
     :members:
     :inherited-members:
     :exclude-members: history, typing
 
-    .. automethod:: discord.ext.commands.Context.history
+    .. automethod:: fosscord.ext.commands.Context.history
         :async-for:
 
-    .. automethod:: discord.ext.commands.Context.typing
+    .. automethod:: fosscord.ext.commands.Context.typing
         :async-with:
 
 .. _ext_commands_api_converters:
@@ -359,255 +359,255 @@ Context
 Converters
 ------------
 
-.. autoclass:: discord.ext.commands.Converter
+.. autoclass:: fosscord.ext.commands.Converter
     :members:
 
-.. autoclass:: discord.ext.commands.ObjectConverter
+.. autoclass:: fosscord.ext.commands.ObjectConverter
     :members:
 
-.. autoclass:: discord.ext.commands.MemberConverter
+.. autoclass:: fosscord.ext.commands.MemberConverter
     :members:
 
-.. autoclass:: discord.ext.commands.UserConverter
+.. autoclass:: fosscord.ext.commands.UserConverter
     :members:
 
-.. autoclass:: discord.ext.commands.MessageConverter
+.. autoclass:: fosscord.ext.commands.MessageConverter
     :members:
 
-.. autoclass:: discord.ext.commands.PartialMessageConverter
+.. autoclass:: fosscord.ext.commands.PartialMessageConverter
     :members:
 
-.. autoclass:: discord.ext.commands.GuildChannelConverter
+.. autoclass:: fosscord.ext.commands.GuildChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.TextChannelConverter
+.. autoclass:: fosscord.ext.commands.TextChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.VoiceChannelConverter
+.. autoclass:: fosscord.ext.commands.VoiceChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.StoreChannelConverter
+.. autoclass:: fosscord.ext.commands.StoreChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.StageChannelConverter
+.. autoclass:: fosscord.ext.commands.StageChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.CategoryChannelConverter
+.. autoclass:: fosscord.ext.commands.CategoryChannelConverter
     :members:
 
-.. autoclass:: discord.ext.commands.InviteConverter
+.. autoclass:: fosscord.ext.commands.InviteConverter
     :members:
 
-.. autoclass:: discord.ext.commands.GuildConverter
+.. autoclass:: fosscord.ext.commands.GuildConverter
     :members:
 
-.. autoclass:: discord.ext.commands.RoleConverter
+.. autoclass:: fosscord.ext.commands.RoleConverter
     :members:
 
-.. autoclass:: discord.ext.commands.GameConverter
+.. autoclass:: fosscord.ext.commands.GameConverter
     :members:
 
-.. autoclass:: discord.ext.commands.ColourConverter
+.. autoclass:: fosscord.ext.commands.ColourConverter
     :members:
 
-.. autoclass:: discord.ext.commands.EmojiConverter
+.. autoclass:: fosscord.ext.commands.EmojiConverter
     :members:
 
-.. autoclass:: discord.ext.commands.PartialEmojiConverter
+.. autoclass:: fosscord.ext.commands.PartialEmojiConverter
     :members:
 
-.. autoclass:: discord.ext.commands.ThreadConverter
+.. autoclass:: fosscord.ext.commands.ThreadConverter
     :members:
 
-.. autoclass:: discord.ext.commands.GuildStickerConverter
+.. autoclass:: fosscord.ext.commands.GuildStickerConverter
     :members:
 
-.. autoclass:: discord.ext.commands.clean_content
+.. autoclass:: fosscord.ext.commands.clean_content
     :members:
 
-.. autoclass:: discord.ext.commands.Greedy()
+.. autoclass:: fosscord.ext.commands.Greedy()
 
-.. autofunction:: discord.ext.commands.run_converters
+.. autofunction:: fosscord.ext.commands.run_converters
 
 Flag Converter
 ~~~~~~~~~~~~~~~
 
-.. autoclass:: discord.ext.commands.FlagConverter
+.. autoclass:: fosscord.ext.commands.FlagConverter
     :members:
 
-.. autoclass:: discord.ext.commands.Flag()
+.. autoclass:: fosscord.ext.commands.Flag()
     :members:
 
-.. autofunction:: discord.ext.commands.flag
+.. autofunction:: fosscord.ext.commands.flag
 
 .. _ext_commands_api_errors:
 
 Exceptions
 -----------
 
-.. autoexception:: discord.ext.commands.CommandError
+.. autoexception:: fosscord.ext.commands.CommandError
     :members:
 
-.. autoexception:: discord.ext.commands.ConversionError
+.. autoexception:: fosscord.ext.commands.ConversionError
     :members:
 
-.. autoexception:: discord.ext.commands.MissingRequiredArgument
+.. autoexception:: fosscord.ext.commands.MissingRequiredArgument
     :members:
 
-.. autoexception:: discord.ext.commands.ArgumentParsingError
+.. autoexception:: fosscord.ext.commands.ArgumentParsingError
     :members:
 
-.. autoexception:: discord.ext.commands.UnexpectedQuoteError
+.. autoexception:: fosscord.ext.commands.UnexpectedQuoteError
     :members:
 
-.. autoexception:: discord.ext.commands.InvalidEndOfQuotedStringError
+.. autoexception:: fosscord.ext.commands.InvalidEndOfQuotedStringError
     :members:
 
-.. autoexception:: discord.ext.commands.ExpectedClosingQuoteError
+.. autoexception:: fosscord.ext.commands.ExpectedClosingQuoteError
     :members:
 
-.. autoexception:: discord.ext.commands.BadArgument
+.. autoexception:: fosscord.ext.commands.BadArgument
     :members:
 
-.. autoexception:: discord.ext.commands.BadUnionArgument
+.. autoexception:: fosscord.ext.commands.BadUnionArgument
     :members:
 
-.. autoexception:: discord.ext.commands.BadLiteralArgument
+.. autoexception:: fosscord.ext.commands.BadLiteralArgument
     :members:
 
-.. autoexception:: discord.ext.commands.PrivateMessageOnly
+.. autoexception:: fosscord.ext.commands.PrivateMessageOnly
     :members:
 
-.. autoexception:: discord.ext.commands.NoPrivateMessage
+.. autoexception:: fosscord.ext.commands.NoPrivateMessage
     :members:
 
-.. autoexception:: discord.ext.commands.CheckFailure
+.. autoexception:: fosscord.ext.commands.CheckFailure
     :members:
 
-.. autoexception:: discord.ext.commands.CheckAnyFailure
+.. autoexception:: fosscord.ext.commands.CheckAnyFailure
     :members:
 
-.. autoexception:: discord.ext.commands.CommandNotFound
+.. autoexception:: fosscord.ext.commands.CommandNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.DisabledCommand
+.. autoexception:: fosscord.ext.commands.DisabledCommand
     :members:
 
-.. autoexception:: discord.ext.commands.CommandInvokeError
+.. autoexception:: fosscord.ext.commands.CommandInvokeError
     :members:
 
-.. autoexception:: discord.ext.commands.TooManyArguments
+.. autoexception:: fosscord.ext.commands.TooManyArguments
     :members:
 
-.. autoexception:: discord.ext.commands.UserInputError
+.. autoexception:: fosscord.ext.commands.UserInputError
     :members:
 
-.. autoexception:: discord.ext.commands.CommandOnCooldown
+.. autoexception:: fosscord.ext.commands.CommandOnCooldown
     :members:
 
-.. autoexception:: discord.ext.commands.MaxConcurrencyReached
+.. autoexception:: fosscord.ext.commands.MaxConcurrencyReached
     :members:
 
-.. autoexception:: discord.ext.commands.NotOwner
+.. autoexception:: fosscord.ext.commands.NotOwner
     :members:
 
-.. autoexception:: discord.ext.commands.MessageNotFound
+.. autoexception:: fosscord.ext.commands.MessageNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.MemberNotFound
+.. autoexception:: fosscord.ext.commands.MemberNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.GuildNotFound
+.. autoexception:: fosscord.ext.commands.GuildNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.UserNotFound
+.. autoexception:: fosscord.ext.commands.UserNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.ChannelNotFound
+.. autoexception:: fosscord.ext.commands.ChannelNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.ChannelNotReadable
+.. autoexception:: fosscord.ext.commands.ChannelNotReadable
     :members:
 
-.. autoexception:: discord.ext.commands.ThreadNotFound
+.. autoexception:: fosscord.ext.commands.ThreadNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.BadColourArgument
+.. autoexception:: fosscord.ext.commands.BadColourArgument
     :members:
 
-.. autoexception:: discord.ext.commands.RoleNotFound
+.. autoexception:: fosscord.ext.commands.RoleNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.BadInviteArgument
+.. autoexception:: fosscord.ext.commands.BadInviteArgument
     :members:
 
-.. autoexception:: discord.ext.commands.EmojiNotFound
+.. autoexception:: fosscord.ext.commands.EmojiNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.PartialEmojiConversionFailure
+.. autoexception:: fosscord.ext.commands.PartialEmojiConversionFailure
     :members:
 
-.. autoexception:: discord.ext.commands.GuildStickerNotFound
+.. autoexception:: fosscord.ext.commands.GuildStickerNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.BadBoolArgument
+.. autoexception:: fosscord.ext.commands.BadBoolArgument
     :members:
 
-.. autoexception:: discord.ext.commands.MissingPermissions
+.. autoexception:: fosscord.ext.commands.MissingPermissions
     :members:
 
-.. autoexception:: discord.ext.commands.BotMissingPermissions
+.. autoexception:: fosscord.ext.commands.BotMissingPermissions
     :members:
 
-.. autoexception:: discord.ext.commands.MissingRole
+.. autoexception:: fosscord.ext.commands.MissingRole
     :members:
 
-.. autoexception:: discord.ext.commands.BotMissingRole
+.. autoexception:: fosscord.ext.commands.BotMissingRole
     :members:
 
-.. autoexception:: discord.ext.commands.MissingAnyRole
+.. autoexception:: fosscord.ext.commands.MissingAnyRole
     :members:
 
-.. autoexception:: discord.ext.commands.BotMissingAnyRole
+.. autoexception:: fosscord.ext.commands.BotMissingAnyRole
     :members:
 
-.. autoexception:: discord.ext.commands.NSFWChannelRequired
+.. autoexception:: fosscord.ext.commands.NSFWChannelRequired
     :members:
 
-.. autoexception:: discord.ext.commands.FlagError
+.. autoexception:: fosscord.ext.commands.FlagError
     :members:
 
-.. autoexception:: discord.ext.commands.BadFlagArgument
+.. autoexception:: fosscord.ext.commands.BadFlagArgument
     :members:
 
-.. autoexception:: discord.ext.commands.MissingFlagArgument
+.. autoexception:: fosscord.ext.commands.MissingFlagArgument
     :members:
 
-.. autoexception:: discord.ext.commands.TooManyFlags
+.. autoexception:: fosscord.ext.commands.TooManyFlags
     :members:
 
-.. autoexception:: discord.ext.commands.MissingRequiredFlag
+.. autoexception:: fosscord.ext.commands.MissingRequiredFlag
     :members:
 
-.. autoexception:: discord.ext.commands.ExtensionError
+.. autoexception:: fosscord.ext.commands.ExtensionError
     :members:
 
-.. autoexception:: discord.ext.commands.ExtensionAlreadyLoaded
+.. autoexception:: fosscord.ext.commands.ExtensionAlreadyLoaded
     :members:
 
-.. autoexception:: discord.ext.commands.ExtensionNotLoaded
+.. autoexception:: fosscord.ext.commands.ExtensionNotLoaded
     :members:
 
-.. autoexception:: discord.ext.commands.NoEntryPointError
+.. autoexception:: fosscord.ext.commands.NoEntryPointError
     :members:
 
-.. autoexception:: discord.ext.commands.ExtensionFailed
+.. autoexception:: fosscord.ext.commands.ExtensionFailed
     :members:
 
-.. autoexception:: discord.ext.commands.ExtensionNotFound
+.. autoexception:: fosscord.ext.commands.ExtensionNotFound
     :members:
 
-.. autoexception:: discord.ext.commands.CommandRegistrationError
+.. autoexception:: fosscord.ext.commands.CommandRegistrationError
     :members:
 
 
@@ -616,7 +616,7 @@ Exception Hierarchy
 
 .. exception_hierarchy::
 
-    - :exc:`~.DiscordException`
+    - :exc:`~.FosscordException`
         - :exc:`~.commands.CommandError`
             - :exc:`~.commands.ConversionError`
             - :exc:`~.commands.UserInputError`

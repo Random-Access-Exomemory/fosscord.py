@@ -2,29 +2,29 @@
 
 import typing
 
-import discord
-from discord.ext import commands
+import fosscord
+from fosscord.ext import commands
 
-intents = discord.Intents.default()
+intents = fosscord.Intents.default()
 intents.members = True
 
 bot = commands.Bot("!", intents=intents)
 
 
 @bot.command()
-async def userinfo(ctx: commands.Context, user: discord.User):
+async def userinfo(ctx: commands.Context, user: fosscord.User):
     # In the command signature above, you can see that the `user`
-    # parameter is typehinted to `discord.User`. This means that
+    # parameter is typehinted to `fosscord.User`. This means that
     # during command invocation we will attempt to convert
-    # the value passed as `user` to a `discord.User` instance.
-    # The documentation notes what can be converted, in the case of `discord.User`
+    # the value passed as `user` to a `fosscord.User` instance.
+    # The documentation notes what can be converted, in the case of `fosscord.User`
     # you pass an ID, mention or username (discrim optional)
     # E.g. 80088516616269824, @Danny or Danny#0007
 
     # NOTE: typehinting acts as a converter within the `commands` framework only.
     # In standard Python, it is use for documentation and IDE assistance purposes.
 
-    # If the conversion is successful, we will have a `discord.User` instance
+    # If the conversion is successful, we will have a `fosscord.User` instance
     # and can do the following:
     user_id = user.id
     username = user.name
@@ -45,7 +45,7 @@ class ChannelOrMemberConverter(commands.Converter):
     async def convert(self, ctx: commands.Context, argument: str):
         # In this example we have made a custom converter.
         # This checks if an input is convertible to a
-        # `discord.Member` or `discord.TextChannel` instance from the
+        # `fosscord.Member` or `fosscord.TextChannel` instance from the
         # input the user has given us using the pre-existing converters
         # that the library provides.
 
@@ -89,23 +89,23 @@ async def notify(ctx: commands.Context, target: ChannelOrMemberConverter):
 
 @bot.command()
 async def ignore(
-    ctx: commands.Context, target: typing.Union[discord.Member, discord.TextChannel]
+    ctx: commands.Context, target: typing.Union[fosscord.Member, fosscord.TextChannel]
 ):
     # This command signature utilises the `typing.Union` typehint.
     # The `commands` framework attempts a conversion of each type in this Union *in order*.
-    # So, it will attempt to convert whatever is passed to `target` to a `discord.Member` instance.
-    # If that fails, it will attempt to convert it to a `discord.TextChannel` instance.
+    # So, it will attempt to convert whatever is passed to `target` to a `fosscord.Member` instance.
+    # If that fails, it will attempt to convert it to a `fosscord.TextChannel` instance.
     # See: https://pycord.readthedocs.io/en/latest/ext/commands/commands.html#typing-union
     # NOTE: If a Union typehint converter fails it will raise `commands.BadUnionArgument`
     # instead of `commands.BadArgument`.
 
     # To check the resulting type, `isinstance` is used
-    if isinstance(target, discord.Member):
+    if isinstance(target, fosscord.Member):
         await ctx.send(
             f"Member found: {target.mention}, adding them to the ignore list."
         )
     elif isinstance(
-        target, discord.TextChannel
+        target, fosscord.TextChannel
     ):  # this could be an `else` but for completeness' sake.
         await ctx.send(
             f"Channel found: {target.mention}, adding it to the ignore list."

@@ -1,7 +1,7 @@
-import discord
-from discord.app import Option
+import fosscord
+from fosscord.app import Option
 
-bot = discord.Bot()
+bot = fosscord.Bot()
 
 @bot.slash_command(guild_ids=[...])
 async def hello(

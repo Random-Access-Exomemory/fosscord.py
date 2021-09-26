@@ -1,17 +1,7 @@
 fosscord.py
 ==========
 
-.. image:: https://img.shields.io/discord/806142446094385153?color=5865f2&label=Discord&logo=discord
-   :target: https://discord.gg/Ms5Ev7S6bF
-   :alt: Discord server invite
-.. image:: https://img.shields.io/pypi/v/py-cord.svg
-   :target: https://pypi.python.org/pypi/py-cord
-   :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/pyversions/py-cord.svg
-   :target: https://pypi.python.org/pypi/py-cord
-   :alt: PyPI supported Python versions
-
-A fork of PyCord. Fosscord.py is a modern, easy to use, feature-rich, and async ready API wrapper for Fosscord instances written in Python.
+A fork of PyCord. Fosscord.py is a modern, easy to use, feature-rich, and async ready API wrapper for Fosscord written in Python.
 
 Key Features
 -------------
@@ -30,30 +20,39 @@ To install the library without full voice support, you can just run the followin
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U py-cord
+    python3 -m pip install -U fosscord.py
 
     # Windows
-    py -3 -m pip install -U py-cord
+    py -3 -m pip install -U fosscord.py
 
 Otherwise to get voice support you should run the following command:
 
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U "py-cord[voice]"
+    python3 -m pip install -U "fosscord.py[voice]"
 
     # Windows
-    py -3 -m pip install -U py-cord[voice]
-
+    py -3 -m pip install -U fosscord.py[voice]
 
 To install the development version, do the following:
 
 .. code:: sh
 
-    $ git clone https://github.com/mugman174/fosscord
-    $ cd fosscord
+    $ git clone https://github.com/mugman174/fosscord.py
+    $ cd fosscord.py
     $ python3 -m pip install -U .[voice]
 
+
+Optional Packages
+~~~~~~~~~~~~~~~~~~
+
+* `PyNaCl <https://pypi.org/project/PyNaCl/>`__ (for voice support)
+
+Please note that on Linux installing voice you must install the following packages via your favourite package manager (e.g. ``apt``, ``dnf``, etc) before running the above commands:
+
+* libffi-dev (or ``libffi-devel`` on some systems)
+* python-dev (e.g. ``python3.6-dev`` for Python 3.6)
 
 Quick Example
 --------------
@@ -62,21 +61,33 @@ Quick Example
 
     import fosscord
 
-    bot = discord.Client()
-
-    @bot.event
-    async def on_ready():
-        print("Logged on as", bot.user)
-
-    @bot.event
-    async def on_message(message):
-        # don't respond to ourselves
-        if message.author == self.user:
-            return
-
-        if message.content == 'ping':
-            await message.channel.send('pong')    
+    bot = fosscord.Bot()
+    
+    @bot.slash_command()
+    async def hello(ctx, name: str = None):
+        name = name or ctx.author.name
+        await ctx.respond(f"Hello {name}!")
         
+    @bot.user_command(name="Say Hello")
+    async def hi(ctx, user):
+        await ctx.respond(f"{ctx.author.mention} says hello to {user.name}!")
+        
+    bot.run("token")
+
+Normal Commands Example
+~~~~~~~~~~~~~
+
+.. code:: py
+    # Note this example is currently non-working
+    import fosscord
+    from fosscord.ext import commands
+
+    bot = commands.Bot(command_prefix=">")
+
+    @bot.command()
+    async def ping(ctx):
+        await ctx.send("pong")
+
     bot.run("token")
 
 You can find more examples in the examples directory.
@@ -85,6 +96,4 @@ Links
 ------
 
 - `Documentation <https://pycord.readthedocs.io/en/latest/index.html>`_
-- `Official Discord Server <https://discord.gg/Ms5Ev7S6bF>`_
-- `Discord Developers <https://discord.gg/discord-developers>`_
-- `Discord API <https://discord.gg/discord-api>`_
+- `Official Fosscord Server <https://fosscord.gg/dK2qkEJ37N>`_

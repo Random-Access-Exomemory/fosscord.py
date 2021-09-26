@@ -16,7 +16,7 @@ Configuration of the ``logging`` module can be as simple as::
     logging.basicConfig(level=logging.INFO)
 
 Placed at the start of the application. This will output the logs from
-discord as well as other libraries that use the ``logging`` module
+fosscord as well as other libraries that use the ``logging`` module
 directly to the console.
 
 The optional ``level`` argument specifies what level of events to log
@@ -24,15 +24,15 @@ out and can be any of ``CRITICAL``, ``ERROR``, ``WARNING``, ``INFO``, and
 ``DEBUG`` and if not specified defaults to ``WARNING``.
 
 More advanced setups are possible with the :mod:`logging` module. For
-example to write the logs to a file called ``discord.log`` instead of
+example to write the logs to a file called ``fosscord.log`` instead of
 outputting them to the console the following snippet can be used::
 
-    import discord
+    import fosscord
     import logging
 
-    logger = logging.getLogger('discord')
+    logger = logging.getLogger('fosscord')
     logger.setLevel(logging.DEBUG)
-    handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+    handler = logging.FileHandler(filename='fosscord.log', encoding='utf-8', mode='w')
     handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
     logger.addHandler(handler)
 

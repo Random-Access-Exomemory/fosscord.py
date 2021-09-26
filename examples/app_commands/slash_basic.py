@@ -1,11 +1,11 @@
-import discord
+import fosscord
 
-bot = discord.Bot()
+bot = fosscord.Bot()
 
-# Note: If you want you can use commands.Bot instead of discord.Bot
-# Use discord.Bot if you don't want prefixed message commands
+# Note: If you want you can use commands.Bot instead of fosscord.Bot
+# Use fosscord.Bot if you don't want prefixed message commands
 
-# With discord.Bot you can use @bot.command as an alias 
+# With fosscord.Bot you can use @bot.command as an alias 
 # of @bot.slash_command but this is overriden by commands.Bot
 
 
@@ -24,10 +24,10 @@ async def global_command(ctx, num: int):  # Takes one integer parameter
 
 @bot.slash_command(guild_ids=[...])
 async def joined(
-    ctx, member: discord.Member = None
+    ctx, member: fosscord.Member = None
 ):  # Passing a default value makes the argument optional
     user = member or ctx.author
-    await ctx.send(f"{user.name} joined at {discord.utils.format_dt(user.joined_at)}")
+    await ctx.send(f"{user.name} joined at {fosscord.utils.format_dt(user.joined_at)}")
 
 
 # To learn how to add descriptions, choices to options check slash_options.py

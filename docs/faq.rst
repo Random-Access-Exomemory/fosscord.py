@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: discord
+.. currentmodule:: fosscord
 .. _faq:
 
 Frequently Asked Questions
@@ -105,11 +105,11 @@ For memory optimisation purposes, some activities are offered in slimmed-down ve
 
 Putting both of these pieces of info together, you get the following: ::
 
-    client = discord.Client(activity=discord.Game(name='my game'))
+    client = fosscord.Client(activity=fosscord.Game(name='my game'))
 
     # or, for watching:
-    activity = discord.Activity(name='my activity', type=discord.ActivityType.watching)
-    client = discord.Client(activity=activity)
+    activity = fosscord.Activity(name='my activity', type=fosscord.ActivityType.watching)
+    client = fosscord.Client(activity=activity)
 
 How do I send a message to a specific channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,25 +143,25 @@ The ID of a message can be accessed via :attr:`Message.id`: ::
 How do I upload an image?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To upload something to Discord you have to use the :class:`File` object.
+To upload something to Fosscord you have to use the :class:`File` object.
 
 A :class:`File` accepts two parameters, the file-like object (or file path) and the filename
-to pass to Discord when uploading.
+to pass to Fosscord when uploading.
 
 If you want to upload an image it's as simple as: ::
 
-    await channel.send(file=discord.File('my_file.png'))
+    await channel.send(file=fosscord.File('my_file.png'))
 
 If you have a file-like object you can do as follows: ::
 
     with open('my_file.png', 'rb') as fp:
-        await channel.send(file=discord.File(fp, 'new_filename.png'))
+        await channel.send(file=fosscord.File(fp, 'new_filename.png'))
 
 To upload multiple files, you can use the ``files`` keyword argument instead of ``file``\: ::
 
     my_files = [
-        discord.File('result.zip'),
-        discord.File('teaser_graph.png'),
+        fosscord.File('result.zip'),
+        fosscord.File('teaser_graph.png'),
     ]
     await channel.send(files=my_files)
 
@@ -178,7 +178,7 @@ and then pass an :class:`io.BytesIO` instance to :class:`File` like so:
             if resp.status != 200:
                 return await channel.send('Could not download file...')
             data = io.BytesIO(await resp.read())
-            await channel.send(file=discord.File(data, 'cool_image.png'))
+            await channel.send(file=fosscord.File(data, 'cool_image.png'))
 
 
 How can I add a reaction to a message?
@@ -216,7 +216,7 @@ Quick example: ::
     await message.add_reaction(emoji)
 
     # no ID, do a lookup
-    emoji = discord.utils.get(guild.emojis, name='LUL')
+    emoji = fosscord.utils.get(guild.emojis, name='LUL')
     if emoji:
         await message.add_reaction(emoji)
 
@@ -248,7 +248,7 @@ this together we can do the following: ::
             # an error happened sending the message
             pass
 
-    voice.play(discord.FFmpegPCMAudio(url), after=my_after)
+    voice.play(fosscord.FFmpegPCMAudio(url), after=my_after)
 
 How do I run something in the background?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,12 +286,12 @@ specific models.
 Quick example: ::
 
     # find a guild by name
-    guild = discord.utils.get(client.guilds, name='My Server')
+    guild = fosscord.utils.get(client.guilds, name='My Server')
 
     # make sure to check if it's found
     if guild is not None:
         # find a channel by name
-        channel = discord.utils.get(guild.text_channels, name='cool-channel')
+        channel = fosscord.utils.get(guild.text_channels, name='cool-channel')
 
 How do I make a web request?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -311,7 +311,7 @@ See `aiohttp's full documentation <http://aiohttp.readthedocs.io/en/stable/>`_ f
 How do I use a local image file for an embed image?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Discord special-cases uploading an image attachment and using it within an embed so that it will not
+Fosscord special-cases uploading an image attachment and using it within an embed so that it will not
 display separately, but instead in the embed's thumbnail, image, footer or author icon.
 
 To do so, upload the image normally with :meth:`abc.Messageable.send`,
@@ -321,25 +321,25 @@ where ``image.png`` is the filename of the image you will send.
 
 Quick example: ::
 
-    file = discord.File("path/to/my/image.png", filename="image.png")
-    embed = discord.Embed()
+    file = fosscord.File("path/to/my/image.png", filename="image.png")
+    embed = fosscord.Embed()
     embed.set_image(url="attachment://image.png")
     await channel.send(file=file, embed=embed)
 
 .. note ::
 
-    Due to a Discord limitation, filenames may not include underscores.
+    Due to a Fosscord limitation, filenames may not include underscores.
 
 Is there an event for audit log entries being created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Discord does not dispatch this information in the gateway, the library cannot provide this information.
-This is currently a Discord limitation.
+Since Fosscord does not dispatch this information in the gateway, the library cannot provide this information.
+This is currently a Fosscord limitation.
 
 Commands Extension
 -------------------
 
-Questions regarding ``discord.ext.commands`` belong here.
+Questions regarding ``fosscord.ext.commands`` belong here.
 
 Why does ``on_message`` make my commands stop working?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

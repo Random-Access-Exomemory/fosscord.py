@@ -1,9 +1,9 @@
 pycord
 ==========
 
-.. image:: https://discord.com/api/guilds/681882711945641997/embed.png
-   :target: https://discord.gg/dK2qkEJ37N
-   :alt: Discordサーバーの招待
+.. image:: https://dev.fosscord.com/api/guilds/681882711945641997/embed.png
+   :target: https://fosscord.gg/dK2qkEJ37N
+   :alt: Fosscordサーバーの招待
 .. image:: https://img.shields.io/pypi/v/py-cord.svg
    :target: https://pypi.python.org/pypi/py-cord
    :alt: PyPIのバージョン情報
@@ -11,7 +11,7 @@ pycord
    :target: https://pypi.python.org/pypi/py-cord
    :alt: PyPIのサポートしているPythonのバージョン
 
-discord.pyのフォーク。 PyCordはPythonで記述されたDiscord用の最新の使いやすい機能豊富な非同期対応APIラッパーです。
+fosscord.pyのフォーク。 PyCordはPythonで記述されたFosscord用の最新の使いやすい機能豊富な非同期対応APIラッパーです。
 
 主な特徴
 -------------
@@ -69,9 +69,9 @@ Linuxで音声サポートを導入するには、前述のコマンドを実行
 
 .. code:: py
 
-    import discord
+    import fosscord
 
-    class MyClient(discord.Client):
+    class MyClient(fosscord.Client):
         async def on_ready(self):
             print('Logged on as', self.user)
 
@@ -91,8 +91,8 @@ Botの例
 
 .. code:: py
 
-    import discord
-    from discord.ext import commands
+    import fosscord
+    from fosscord.ext import commands
 
     bot = commands.Bot(command_prefix='>')
 
@@ -108,5 +108,5 @@ examplesディレクトリに更に多くのサンプルがあります。
 ------
 
 - `ドキュメント <https://pycord.readthedocs.io/en/latest/index.html>`_
-- `公式Discordサーバー <https://discord.gg/dK2qkEJ37N>`_
-- `Discord API <https://discord.gg/discord-api>`_
+- `公式Fosscordサーバー <https://fosscord.gg/dK2qkEJ37N>`_
+- `Fosscord API <https://fosscord.gg/fosscord-api>`_

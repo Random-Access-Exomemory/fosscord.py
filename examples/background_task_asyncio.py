@@ -1,8 +1,8 @@
-import discord
+import fosscord
 import asyncio
 
 
-class MyClient(discord.Client):
+class MyClient(fosscord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

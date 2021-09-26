@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: discord
+.. currentmodule:: fosscord
 
 .. _intro:
 
@@ -8,7 +8,7 @@ Introduction
 ==============
 
 This is the documentation for Pycord, a library for Python to aid
-in creating applications that utilise the Discord API.
+in creating applications that utilise the Fosscord API.
 
 Prerequisites
 ---------------
@@ -91,7 +91,7 @@ Congratulations. You now have a virtual environment all set up.
 Basic Concepts
 ---------------
 
-Pycord revolves around the concept of :ref:`events <discord-api-events>`.
+Pycord revolves around the concept of :ref:`events <fosscord-api-events>`.
 An event is something you listen to and then respond to. For example, when a message
 happens, you will receive an event about it that you can respond to.
 
@@ -99,9 +99,9 @@ A quick example to showcase how events work:
 
 .. code-block:: python3
 
-    import discord
+    import fosscord
 
-    class MyClient(discord.Client):
+    class MyClient(fosscord.Client):
         async def on_ready(self):
             print(f'Logged on as {self.user}!')
 
